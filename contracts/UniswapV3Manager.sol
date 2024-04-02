@@ -30,7 +30,7 @@ contract UniswapV3Manager is AccessControl, IERC721Receiver {
         keccak256("LIQUIDIY_MANAGER_ROLE");
 
     INonfungiblePositionManager public immutable nonfungiblePositionManager;
-    mapping(uint256 tokenId => Position) public positions;
+    mapping(uint256 tokenId => Position) private positions;
 
     event PositionCreated(uint256 tokenId, uint256 amount0, uint256 amount1);
     event PositionRemoved(uint256 tokenId, uint256 amount0, uint256 amount1);

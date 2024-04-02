@@ -6,7 +6,7 @@ import { HardhatUserConfig } from 'hardhat/config';
 import '@nomicfoundation/hardhat-toolbox';
 
 const deployerPrivateKey = process.env.PRIVATE_KEY;
-const alchemyProvider = process.env.ALCHEMY_API_KEY;
+const alchemyProvider = process.env.ALCHEMY_PROVIDER;
 const polygonScannerApiKey = process.env.POLYGON_SCANNER_API_KEY;
 
 const config: HardhatUserConfig = {
@@ -30,6 +30,12 @@ const config: HardhatUserConfig = {
 
     defaultNetwork: 'hardhat',
     networks: {
+        hardhat: {
+            forking: {
+                url: alchemyProvider!,
+                blockNumber: 47775831,
+            },
+        },
         mumbai: {
             url: alchemyProvider,
             accounts: [deployerPrivateKey!],

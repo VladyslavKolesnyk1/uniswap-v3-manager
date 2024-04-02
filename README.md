@@ -54,3 +54,13 @@ The UniswapV3Manager contract facilitates liquidity provision on the Uniswap V3 
 *    When using `AboveCurrentTick` or `BelowCurrentTick`, the contract takes the current tick and adjusts it by +/- 50 tick spaces.
 *    The _`createPossition` method sets a tick range of +/- 10 tick spaces around the provided tick. If the liquidity provision is above or below the current tick, it adjusts the tick range accordingly.
 *    The contract does not handle `amount0Min` and `amount1Min`, so users need to be cautious of slippage.
+
+# Tests
+
+To simplify testing, hardhat is using fork of mumbai network with deployed `pool`, `tokens`, `nonfungiblePositionManager`.
+
+To run tests, use the following command:
+
+```bash
+npx hardhat test
+```

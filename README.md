@@ -41,8 +41,7 @@ The UniswapV3Manager contract facilitates liquidity provision on the Uniswap V3 
 
    ```solidity
    function positionInfo(
-   uint256 tokenId,
-   address pool
+   uint256 tokenId
    ) external view returns (int24 tickLower, int24 tickUpper, uint128 liquidity, int24 tick);
 ```
 
